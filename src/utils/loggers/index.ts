@@ -1,3 +1,2 @@
-export { default as toError } from "./toError";
-export { default as toInfo } from "./toInfo";
-export { default as toWarn } from "./toWarn";
+export { default as newLogger } from "./newLogger";
+export { default as newNamespace } from "./newNamespace";

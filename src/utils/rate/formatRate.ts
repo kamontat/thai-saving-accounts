@@ -1,9 +1,9 @@
 import { FORMAT_MODES } from "@/constants/format";
 import { LOCALE } from "@/constants/locale";
 import type { Rate } from "@/types";
+import { formatMonth } from "@/utils/date";
 import { newFormat } from "@/utils/format";
 import { formatNumber } from "@/utils/number";
-import { formatMonth } from "../date";
 import toYearRate from "./toYearRate";
 
 const formatRate = newFormat<Rate>({

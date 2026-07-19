@@ -18,8 +18,8 @@ const keptGrowSaving = newProduct("kept-grow-saving", {
 
 	minMonth: newMonthByYear(2),
 	maxAccount: 1,
-	minAmount: 1,
 	maxAmount: 2_000_000,
+	amountStep: 100_000,
 
 	tiers: [
 		newTier("Tier 1", newYearPercent(1.25), (amount, month, { maxAmount }) => {

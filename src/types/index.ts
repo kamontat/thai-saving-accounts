@@ -1,6 +1,7 @@
 export type * from "./allocation";
 export type * from "./format";
 export type * from "./interest";
+export type * from "./logger";
 export type * from "./month";
 export type * from "./object";
 export type * from "./product";

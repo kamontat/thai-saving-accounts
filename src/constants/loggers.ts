@@ -1,7 +1,11 @@
-import { debug } from "debug";
+export const separator = ":" as const;
 
-export const appLogger = debug("sav");
+export const logLevel = {
+	debug: "DBG",
+	info: "INF",
+	warn: "WRN",
+	error: "ERR",
+} as const;
 
-export const calculatorsLogger = appLogger.extend("calculators");
-export const productsLogger = appLogger.extend("products");
-export const utilsLogger = appLogger.extend("utils");
+export type Separator = typeof separator;
+export type LogLevel = keyof typeof logLevel;

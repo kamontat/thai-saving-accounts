@@ -1,11 +1,11 @@
-import { calInterest } from "@/calculators";
-import { appLogger } from "@/constants/loggers";
-import { getProductById } from "@/products";
-import { toInfo } from "@/utils/loggers";
+import { newLogger } from "@/utils/loggers";
+import { calAllocations, calAmount } from "./calculators";
 import { FORMAT_MODES } from "./constants/format";
-import { formatInterest } from "./utils/interest";
+import { getProductById, getProducts } from "./products";
+import { formatAllocation } from "./utils/allocation";
 
-const logger = toInfo(appLogger.extend("index"));
+const logger = newLogger(["index"] as const);
+logger.info("Starting the application...");
 
 // const amounts = [
 // 	1_000, 2_000, 5_000, 10_000, 50_000, 100_000, 500_000, 1_000_000, 2_000_000,
@@ -24,16 +24,16 @@ const logger = toInfo(appLogger.extend("index"));
 // 	});
 // });
 
-// const product = getProductById("kept-grow-saving");
-// const amount = calAmount(product);
-// console.log(amount);
+const product = getProductById("kkp-start-saving");
+const amount = calAmount(product);
+logger.info(amount);
 
-logger(
-	formatInterest(
-		calInterest(getProductById("kept-grow-saving"), 10_000_000),
-		FORMAT_MODES.json,
-	),
-);
+// logger(
+// 	formatInterest(
+// 		calInterest(getProductById("kept-grow-saving"), 10_000_000),
+// 		FORMAT_MODES.json,
+// 	),
+// );
 
 // logger(
 // 	formatInterest(
@@ -42,8 +42,8 @@ logger(
 // 	),
 // );
 
-// calAllocations(getProducts(), 10_000_000)
-// 	.map((a) => formatAllocation(a, FORMAT_MODES.text))
-// 	.forEach((a) => {
-// 		logger(JSON.stringify(a, null, 2));
-// 	});
+calAllocations(getProducts(), 10_000_000)
+	.map((a) => formatAllocation(a, FORMAT_MODES.text))
+	.forEach((a) => {
+		logger.info(a);
+	});

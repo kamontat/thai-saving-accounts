@@ -1,7 +1,7 @@
 import type { GetObjectValue, Product } from "@/types";
 import { newMonth } from "@/utils/date";
 
-type OptionalKey = "minMonth" | "maxAccount" | "minAmount" | "maxAmount";
+type OptionalKey = "minMonth" | "maxAccount" | "minAmount" | "amountStep";
 
 export type OptionalProduct<ID extends string> = Omit<
 	GetObjectValue<Product<ID>>,
@@ -19,8 +19,8 @@ const newProduct = <ID extends string>(
 		...product,
 		minMonth: product.minMonth ?? newMonth(1),
 		maxAccount: product.maxAccount ?? Number.POSITIVE_INFINITY,
-		minAmount: product.minAmount ?? 1,
-		maxAmount: product.maxAmount ?? Number.POSITIVE_INFINITY,
+		minAmount: product.minAmount ?? 0,
+		amountStep: product.amountStep ?? 1,
 	};
 };
 export default newProduct;

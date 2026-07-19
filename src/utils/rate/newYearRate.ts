@@ -1,10 +1,10 @@
-import { utilsLogger } from "@/constants/loggers";
 import type { Rate } from "@/types";
 import { newMonthByYear } from "../date";
+import { newLogger } from "../loggers";
 import formatRate from "./formatRate";
 import newRate from "./newRate";
 
-const logger = utilsLogger.extend("rate:newYearRate");
+const logger = newLogger(["utils", "rate", "newYearRate"] as const);
 
 /**
  * create new rate object with frequency of 1 year
@@ -13,7 +13,7 @@ const logger = utilsLogger.extend("rate:newYearRate");
  */
 const newYearRate = (amount: number): Rate => {
 	const result = newRate(amount, newMonthByYear(1));
-	logger("convert rate %d to %s", amount, formatRate(result));
+	logger.debugFn(() => ["convert rate %d to %s", amount, formatRate(result)]);
 	return result;
 };
 export default newYearRate;

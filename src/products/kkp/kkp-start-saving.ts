@@ -20,6 +20,8 @@ const kkpStartSaving = newProduct("kkp-start-saving", {
 
 	minMonth: newMonth(1),
 	maxAccount: 1,
+	maxAmount: 1_000_000,
+	amountStep: 5_000,
 	tiers: [
 		newMinMaxTier("Tier 1", newYearPercent(0.5), 0, 10_000),
 		newMinMaxTier("Tier 2", newYearPercent(1.2), 10_000, 50_000),

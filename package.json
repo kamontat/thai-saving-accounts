@@ -5,7 +5,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "bun run ./src/index.ts",
-		"start": "DEBUG=sav:*:info,sav:*:warn,sav:*:error bun dev",
+		"profile": "bun run --heap-prof-md --heap-prof-dir=.pprof --cpu-prof-md --cpu-prof-dir=.pprof ./src/index.ts",
+		"start": "DEBUG=sav:*,-sav:*:debug bun dev",
 		"debug": "DEBUG=sav:* bun dev",
 		"check": "biome check",
 		"fix": "biome check --write --unsafe"

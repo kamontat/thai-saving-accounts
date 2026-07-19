@@ -41,10 +41,12 @@ export interface Product<ID extends string> extends ObjectKind<"product"> {
 	minMonth: Month;
 	/** Maximum account limit for the product (default = Infinity) */
 	maxAccount: number;
-	/** Minimum optimal amount for the product (default = 1) */
+	/** Minimum optimal amount for the product (default = 0) */
 	minAmount: number;
-	/** Maximum optimal amount for the product (default = Infinity) */
+	/** Maximum optimal amount for the product */
 	maxAmount: number;
+	/** amount steps for calculating optimal amount (default = 1) */
+	amountStep: number;
 
 	tiers: ProductTier[];
 }

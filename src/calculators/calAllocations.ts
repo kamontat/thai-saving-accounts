@@ -1,10 +1,10 @@
-import { calculatorsLogger } from "@/constants/loggers";
 import type { Allocation, Interest, Month, Product } from "@/types";
 import { formatInterest, isBetterInterest } from "@/utils/interest";
+import { newLogger } from "@/utils/loggers";
 import { formatProduct } from "@/utils/product";
 import calInterest from "./calInterest";
 
-const logger = calculatorsLogger.extend("calAllocations");
+const logger = newLogger(["calculators", "calAllocations"] as const);
 
 const calAllocations = (
 	products: Product<string>[],
@@ -18,7 +18,7 @@ const calAllocations = (
 	/** Map of product id and opened account */
 	const productAccounts = new Map<string, number>();
 	while (remain > 0) {
-		logger("calculate allocations for remain: %d", remain);
+		logger.debugFn(() => ["calculate allocations for remain: %d", remain]);
 
 		const possibleProducts = products.filter((product) => {
 			const openedAccount = productAccounts.get(product.id) ?? 0;
@@ -26,7 +26,10 @@ const calAllocations = (
 		});
 
 		if (possibleProducts.length === 0) {
-			logger("no possible products to allocate remain: %d", remain);
+			logger.debugFn(() => [
+				"no possible products to allocate remain: %d",
+				remain,
+			]);
 			break;
 		}
 
@@ -47,8 +50,8 @@ const calAllocations = (
 			base,
 		);
 
-		logger("best product: %s", formatProduct(bestProduct));
-		logger("best interest: %s", formatInterest(bestInterest));
+		logger.debugFn(() => ["best product: %s", formatProduct(bestProduct)]);
+		logger.debugFn(() => ["best interest: %s", formatInterest(bestInterest)]);
 
 		const openedAccount = productAccounts.get(bestProduct.id) ?? 0;
 		productAccounts.set(bestProduct.id, openedAccount + 1);
