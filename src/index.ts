@@ -1,9 +1,9 @@
-import { calAmount, calInterest } from "@/calculators";
+import { calInterest } from "@/calculators";
 import { appLogger } from "@/constants/loggers";
 import { getProductById } from "@/products";
 import { toInfo } from "@/utils/loggers";
-import { formatInterest } from "./utils/interest";
 import { FORMAT_MODES } from "./constants/format";
+import { formatInterest } from "./utils/interest";
 
 const logger = toInfo(appLogger.extend("index"));
 
