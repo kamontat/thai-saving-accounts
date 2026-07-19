@@ -1,0 +1,26 @@
+{
+	"name": "saving-accounts",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "bun run ./src/index.ts",
+		"start": "DEBUG=sav:*:info,sav:*:warn,sav:*:error bun dev",
+		"debug": "DEBUG=sav:* bun dev",
+		"check": "biome check",
+		"fix": "biome check --write --unsafe"
+	},
+	"dependencies": {
+		"debug": "4.4.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.4",
+		"@kcconfigs/biome": "2.0.0",
+		"@kcconfigs/tsconfig": "1.0.3",
+		"@types/bun": "latest",
+		"@types/debug": "4.1.13"
+	},
+	"peerDependencies": {
+		"typescript": "^6"
+	}
+}

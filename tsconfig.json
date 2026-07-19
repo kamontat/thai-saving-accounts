@@ -1,0 +1,19 @@
+{
+	"extends": ["@kcconfigs/tsconfig"],
+	"compilerOptions": {
+		"paths": {
+			"@/calculators": ["./src/calculators/index.ts"],
+			"@/constants/*": ["./src/constants/*"],
+			"@/types": ["./src/types/index.ts"],
+			"@/products": ["./src/products/index.ts"],
+			"@/utils/allocation": ["./src/utils/allocation/index.ts"],
+			"@/utils/date": ["./src/utils/date/index.ts"],
+			"@/utils/format": ["./src/utils/format/index.ts"],
+			"@/utils/interest": ["./src/utils/interest/index.ts"],
+			"@/utils/loggers": ["./src/utils/loggers/index.ts"],
+			"@/utils/number": ["./src/utils/number/index.ts"],
+			"@/utils/product": ["./src/utils/product/index.ts"],
+			"@/utils/rate": ["./src/utils/rate/index.ts"]
+		}
+	}
+}
