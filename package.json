@@ -17,7 +17,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
 		"@kcconfigs/biome": "2.0.0",
-		"@kcconfigs/tsconfig": "1.0.3",
+		"@kcconfigs/tsconfig": "1.1.1",
 		"@types/bun": "latest",
 		"@types/debug": "4.1.13"
 	},
