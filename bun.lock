@@ -9,7 +9,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "2.5.4",
-        "@kcconfigs/biome": "2.0.0",
+        "@kcconfigs/biome": "3.0.0",
         "@kcconfigs/tsconfig": "1.0.3",
         "@types/bun": "latest",
         "@types/debug": "4.1.13",
@@ -92,7 +92,7 @@
 
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 
-    "@kcconfigs/biome": ["@kcconfigs/biome@2.0.0", "", { "peerDependencies": { "@biomejs/biome": "^2.0.0" } }, "sha512-GpjscizS0QTpdeZAcsRUIkov1whzUsWFZX3kGTH7Pkx6y1lo8ynbMqAvbBxw4+GJlc8t9oEzrIyeBBuLsRwc4Q=="],
+    "@kcconfigs/biome": ["@kcconfigs/biome@3.0.0", "", { "peerDependencies": { "@biomejs/biome": "^2.0.0" } }, "sha512-pVgyJxNMWarfPegh7kz0nU4D09pBb+oIR+O5apyj0zfSuG1Vew9PtHIIab05++cAxHpttVUZs95g+iTIy/kkuw=="],
 
     "@kcconfigs/tsconfig": ["@kcconfigs/tsconfig@1.0.3", "", { "dependencies": { "@kctypes/generic": "1.30.4", "@types/node": "^24.0.0" }, "peerDependencies": { "typescript": "^6.0.0" } }, "sha512-7LcDMfFGExvtTdgGjlafppcO9Sn5xLMDA64b7nA8j/f3DrYZIztILd+pWEa+SrPMKYySpUNFKINQBIvGmAvycA=="],
 
